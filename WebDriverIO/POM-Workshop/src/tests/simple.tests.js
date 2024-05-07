@@ -1,6 +1,12 @@
+const DashboardPage = require('./../po/pages/dashboard.page');
+const DoctorsPage = require('./../po/pages/doctors.page');
+
+
+const dashboardPage = new DashboardPage();
+const doctorsPage = new DoctorsPage();
 describe('Doctors page', () => {
     beforeEach(async () => {
-        await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard');
+        await dashboardPage.open();
     })
 
     it("Check page title", async () => {
@@ -10,11 +16,9 @@ describe('Doctors page', () => {
 
     it('Open modal window for adding a new doctor', async () => {
         //Click on doctors item in the side menu
-        const doctorItem = $('[routerLink="/doctors"]');
-        await doctorItem.click();
+        await dashboardPage.sideMenu.item('doctors').click();
         //click on add new doctor btn
-        const addDoctorButton = $('.specialization-types button.e-control');
-        await addDoctorButton.click();
+        await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
         //check that a modal window is displayed
         await expect($('div .new-doctor-dialog')).toBeDisplayed();
 
@@ -23,11 +27,10 @@ describe('Doctors page', () => {
 
     it('Add new doctor', async () => {
         //Click on doctors item in the side menu
-        const doctorItem = $('[routerLink="/doctors"]');
-        await doctorItem.click();
+        await dashboardPage.sideMenu.item('doctors').click();
         //click on add new doctor btn
-        const addDoctorButton = $('.specialization-types button.e-control');
-        await addDoctorButton.click();
+        await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
+
         //check that a modal window is displayed
         await $('div .new-doctor-dialog').waitForDisplayed();
         //Set new name 
