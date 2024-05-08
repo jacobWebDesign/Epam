@@ -18,8 +18,10 @@ class OptionalPasteSettings {
 
     syntaxDropdown(option) {
         const selectors = {
+            bash: 'li=Bash'
 
         }
+        return $(`${selectors[option]}`);
     }
 
     get title() {
@@ -27,6 +29,9 @@ class OptionalPasteSettings {
     }
     get optionSpan() {
         return $('#select2-postform-expiration-container');
+    }
+    get syntaxSpan() {
+        return $('#select2-postform-format-container')
     }
 }
 
