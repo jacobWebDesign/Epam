@@ -59,7 +59,7 @@ describe('Task 2', () => {
 
     it("Checks the title of the paste", async () => {
         await resultPage.title.waitForDisplayed();
-        await expect(resultPage.title).toHaveText('how to gain dominance among developer');
+        await expect(resultPage.title).toHaveText('how to gain dominance among developers');
     })
 
     it("Verifies if the text is suspended for bash", async() => {
