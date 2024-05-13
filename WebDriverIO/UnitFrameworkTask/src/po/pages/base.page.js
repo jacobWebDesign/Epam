@@ -1,4 +1,4 @@
-class MainPage {
+class BasePage {
 
     get url() {
         return "https://cloud.google.com/";
@@ -11,4 +11,4 @@ class MainPage {
     }
 }
 
-module.exports = MainPage;
+module.exports = BasePage;

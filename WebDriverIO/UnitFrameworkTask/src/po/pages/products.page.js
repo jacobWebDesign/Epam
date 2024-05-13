@@ -9,12 +9,6 @@ class ProductsPage {
         }
         return $(selectors[param]);
     }
-
-    async clickAddEstimateBtn(){
-        await this.addEstimateBtn.waitForDisplayed();
-        await this.addEstimateBtn.scrollIntoView({ block: 'center', inline: 'center' });
-        await this.addEstimateBtn.click();
-    }
 }
 
 module.exports = ProductsPage;

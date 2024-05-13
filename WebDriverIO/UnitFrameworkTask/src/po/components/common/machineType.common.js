@@ -8,7 +8,10 @@ class MachineType {
 
     machineFamilies(listedItem){
         const options = {
-            generalPurpose: 'li[data-value=general-purpose]'
+            generalPurpose: 'li[data-value=general-purpose]',
+            computeOptimized: 'li[data-value=compute-optimized]',
+            memoryOptimized: 'li[data-value=memory-optimized]',
+            acceleratorOptimized: 'li[data-value=accelerator-optimized]'
         }
         return $(options[listedItem]);
     }
